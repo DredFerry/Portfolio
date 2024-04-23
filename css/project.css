@@ -1,0 +1,111 @@
+.pg3{
+    position: absolute;
+    top: 250%;
+    /* background-color: aqua; */
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.pg3 h2{
+    font-family: 'halium', sans-serif;
+    color: white;
+    font-size:2rem ;
+    position: absolute;
+}
+
+
+
+
+.pros{
+height: 30%;
+width: 20%;
+transform-origin: center bottom;
+/* background-color: red; */
+filter: drop-shadow(0px 25px 20px black);
+}
+#pro1{
+    transition: all 0.5s ease-in-out;
+    transform:rotateX(83deg) rotateY(35deg) translateX(10%) translateY(0%) translateZ(5rem);
+    /* background-image: url(../project/Food.png);
+    background-size:contain;
+    background-repeat: no-repeat; */
+
+}
+#pro2{
+    transform:rotateX(83deg) translateY(100%)  ;
+    transition: all 0.5s ease-in-out;
+
+}
+#pro3{
+    transition: all 0.5s ease-in-out;
+    transform: rotateX(83deg) rotateY(-35deg) translateX(-10%) translateZ(5rem);
+
+}
+.pros img{
+    width: 100%;
+    height: 100%;
+}
+.desc{
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-evenly;
+    top: 100%;
+    color: white;
+    
+}
+.gHub{
+    background: url(../icons/github_alt_icon.svg);
+    height: 100%;
+    width: 7%;
+    background-repeat: no-repeat;
+}
+
+
+#pro1:hover{
+    cursor: pointer;
+    transform: rotateX(8deg);
+}
+#pro2:hover{
+    transform: rotateX(8deg);
+    cursor: pointer;
+}
+#pro3:hover{
+    transform: rotateX(8deg);
+    cursor: pointer;
+}
+
+
+@media (max-width:1000){ 
+
+    .pg3{
+        flex-direction: column;
+    }
+    .pros{
+        height: 20%;
+        width: 50%;
+    }
+    .pg3 h2{
+        top: 10%;
+    }
+    #pro1{
+        transform:rotateX(60deg) translateY(100%)  ;
+        
+    }
+    #pro2{
+        transform:rotateX(70deg) translateY(100%)  ;
+        
+    }
+    #pro3{
+        transform:rotateX(80deg) translateY(100%)  ;
+    }
+
+}
+
+

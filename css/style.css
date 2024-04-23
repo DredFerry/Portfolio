@@ -1,0 +1,644 @@
+@font-face{
+    font-family: 'stickyNot';
+    src: url(../fonts/sticky-notes-font/Sticky-Notes.ttf);
+}
+@font-face{
+    font-family: 'halium';
+    src: url(../fonts/halimun-font/Halimun.ttf) ;}
+@font-face{
+    src:url(../fonts/pinkerston-2-font/Pinkerston-1.ttf);  
+    font-family: 'typeW1';}
+
+*{
+    margin: 0;padding: 0;
+    font-family:Arial, Helvetica, sans-serif ;
+}
+:root{
+    --papaColor:#6c7ae0;
+    --mummaColor:#1f132e;
+    --betaColor:#482656;
+    --betiColor:#1D0234;
+}
+
+
+
+
+body{
+    /* display: contents; */
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    /* background:url(../img2/bg4.jpg) no-repeat center center ; */
+    /* background-color:var(--mummaColor); */
+    /* background: url(../bg/confetti-doodles.png) fixed; */
+    background-image: url("../bg/bg3.png");
+background-attachment: fixed;
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+.txt{
+    z-index: 100;
+    user-select: none;
+    position: absolute;
+    color: rgb(192, 190, 172);
+    top: 40%;
+    left:25%;
+    font-size: 5rem;
+    font-family: 'typeW1';
+    /* background-color: red; */
+}
+.typed{
+    z-index: 100;
+    color: rgb(158, 111, 49);
+    position: relative;
+    font-size: 5rem;
+    font-family: 'typeW1';
+
+}
+@media (max-width:499px) {
+    .txt{
+        width: 100%;
+        font-size: 4rem;
+        top: 30%;
+        left: 30%;
+    }
+    .typed{
+        font-size: 10vw !important;
+    }
+}
+
+.blob{
+    z-index: 99;
+    position: absolute;
+    background-image: url('../img/pfp.jpg');
+    background-size: cover;
+    background-position:center center ;
+    width: 20vw;
+    height:  20vw;
+    box-shadow: 0 6px 6px 6px rgba(214, 214, 124, 0.1);
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    animation: blobAnimate 5s ease-in-out infinite ;
+    transition: all 0.5s ease-in-out;
+    left: 70%;
+    top: 30%;
+    /* display: none; */
+}
+@media (max-width:600){ 
+    .blob{
+        top: 65%;
+        left: 20%;
+        height: 60vw;
+        width: 60vw;
+    }
+    .txt{
+        width: 65%;
+    }
+}
+@media (max-width:1000){ 
+    .blob{
+        top: 65%;
+        left: 30%;
+        height: 40vw;
+        width: 40vw;
+    }
+}
+@keyframes blobAnimate{
+    0%{
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    
+    50%{
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+   
+    100%{
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
+section{
+    width: 100vw;
+    position: absolute;
+    top: 100vh;
+    /* background: rebeccapurple; */
+    height: 100vh;
+    z-index: -9;
+}
+
+
+canvas{
+    width: 100vw;
+    height: 100vh;
+    /* position: fixed; */
+}
+
+.animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animate.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+#canvas2{
+    position: absolute;
+    top: 170vh;
+    height: 100vh;
+    /* background:url(../img2/bg41.jpg) no-repeat center center ; */
+}
+
+/* pg2  */
+.pg2{
+    position: absolute;
+    top: 95vh;
+    height: 100vh;
+    width: 100%;
+    /* background: black; */
+    /* background: url(../bg/confetti-doodles.png) no-repeat center fixed; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.card{
+    width: 25%;
+    height:60%;
+    /* box-shadow: -13px -11px 25px -8px #322a3d; */
+    border-radius: 17px;
+    /* padding: 10px; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transform-style:preserve-3d ;
+    transition: all 0.7s;
+    box-shadow:inset 0 22px 56px -36px rgba(91, 31, 202, 0.5),
+    inset 0 4px 5px -4px rgb(205, 193, 252),
+    inset 0 -31px 34px -32px rgba(96, 68, 144, 0.3),
+    inset 0 39px 50px -34px rgba(137, 69, 255, 0.3);
+    
+}
+.left{
+    /* background-color: yellow; */
+    top: 0%;
+    left: 0%;
+}
+.center{
+    top: 0%;
+    left: 0%;
+    /* background-color: green; */
+
+}
+
+.right{
+    /* background-color: red; */
+    top: 0%;
+    left: 0%;
+
+}
+
+.cover{
+    font-family: 'typeW1';
+font-size: 60%;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+width: 100%;
+border-radius: 17px;
+z-index: 101;
+position: absolute;
+background-color: #1b0231;
+/* background-color: #1f132e; */
+box-shadow:inset 0 22px 56px -36px rgba(91, 31, 202, 0.5),
+    inset 0 4px 5px -4px rgb(205, 193, 252),
+    inset 0 -31px 34px -32px rgba(96, 68, 144, 0.3),
+    inset 0 39px 50px -34px rgba(137, 69, 255, 0.3);
+    transition: all 0.5s ease-in-out;
+
+}
+.content{
+    position: absolute;
+    z-index: 100;
+    background-color: #10011e;
+    border-radius: 17px;
+    width: 100%;
+    height: 85%;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+    box-shadow:inset 0 22px 56px -36px rgba(255, 255, 255, 0.5),
+    inset 0 4px 5px -4px rgba(255, 255, 255,1),
+    inset 0 -31px 34px -32px rgba(96, 68, 144, 0.3),
+    inset 0 39px 50px -34px rgba(202, 172, 255, 0.3);
+    transition: all 0.5s ease-in-out;
+}
+
+.card:hover .cover{
+    height: 20%;
+    border-radius: 0px 0px 17px 17px;
+}
+
+
+
+@media (max-width:1000){ 
+    .pg2{
+        flex-direction: column;
+    }
+    .card{
+        height: 30%;
+        width: 55%;
+    }
+}
+
+
+/* inside card */
+
+.content ul{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: absolute;
+    left: 15%;
+    top: 10%;
+    width: 80%;
+}
+.content ul li{
+    display: flex;
+    height: 20%;    cursor: pointer;
+
+    
+}
+ul span{
+    box-shadow:inset 0 22px 56px -36px rgba(255, 255, 255, 0.5),
+    inset 0 4px 5px -4px rgb(205, 193, 252),
+    inset 0 -31px 34px -32px rgba(96, 68, 144, 0.3),
+    inset 0 39px 50px -34px rgba(137, 69, 255, 0.3);
+    width: 1px;
+    height: 50%;
+    display: block;
+    position: absolute;
+}
+.icon{
+    height: 45%;
+    width: 11%;
+    border-radius: 100px;
+    position: relative;
+    right: 4.9%;
+    background-color: rgb(213, 201, 241);
+    transition:all 0.3s ease-in-out;
+   
+}
+.job:hover .icon{
+    box-shadow: 0px 0px 30px white;
+}
+
+
+
+@font-face {
+    font-family:'syabil' ;
+    src: url(../fonts/syabil-font/Syabil-Book.otf);
+}
+.job .heading{
+    font-family: 'syabil';
+    height: auto;
+    width: auto;
+    z-index: 100;
+    cursor: pointer;
+
+}
+
+
+.back{
+    height: 0%;
+    width: 0%;
+    position: absolute;
+    z-index: 102;
+    transition: all 0.5s ease-in-out;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    transition: all 0.5s ease-in-out;
+    visibility: hidden;
+}
+
+.comment{
+    position: absolute;
+    visibility: hidden;
+    height: 0;width: 0;
+    /* z-index: 0; */
+    transition: all 0.3s ease-in-out;
+    filter: drop-shadow(10px 10px 9px black);
+    display: block;
+    border: none;
+    border-radius: 150px;
+}
+#cmnt1{
+    bottom: 45%;left: 50%;
+}
+#cmnt2{
+    bottom: 0%;left: 50%;
+}
+
+
+
+
+.heading:hover .comment{
+    height: 70vh !important;
+    width: 70vh !important;
+    visibility: visible;
+}
+
+@media (max-width:1000){ 
+    .heading:hover .comment{
+        width: 70vw !important;
+        height: 70vw !important;
+    }
+    #cmnt1{
+        bottom: 40% !important;
+        left: -20% !important;
+    }
+    #cmnt2{
+        bottom: 0% !important;
+        left: -20% !important;
+    }
+
+}
+
+.Photography:hover .back{
+    visibility: visible !important;
+}
+.Photography:hover .top{
+    height: 90%;
+    width: 90%;
+}
+.Photography:hover{
+    cursor: pointer;
+    /* color: rgb(122, 51, 236); */
+}
+.pic2{
+    z-index: 100;
+}
+.pic2:hover{ 
+    z-index: 105 !important;
+}
+
+
+
+.Guitar:hover{
+    cursor: pointer;
+    /* color: rgb(122, 51, 236); */
+}
+
+.Guitar:hover .bottom{
+    height: 90%;
+    width: 90%;
+}
+.Guitar:hover {
+    z-index: 110;
+}
+.Guitar:hover .back{
+    visibility: visible;
+}
+
+.fakeig{
+    display: none;
+}
+
+@media (max-width:1000){ 
+    .icon{
+        height: 50%;
+        right: 6.5%;
+        width: 15%;
+    }
+
+
+
+    .instagram-media{
+        display: none !important;
+    }
+    .fakeig{
+        display: block;
+    }
+   
+}
+
+
+/* page4 */
+
+.pg4{
+    height: 100vh;
+    width: 100%;
+    /* background-color: #1f132e; */
+    /* background: url(../bg/confetti-doodles.png) no-repeat center fixed;  */
+    background-position: left;
+    background-size: contain;
+    position: absolute;
+    top: 350%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #1F132E; */
+
+}
+.message{
+    color: #fff;
+    /* background-color: #000; */
+    height: 50%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* border-radius: 5px 5px 5px 50px; */
+    transform: rotateY(90deg);
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 1s ease-in-out;
+    /* border:2px double ; */
+    border-image:  linear-gradient(45deg, transparent ,#6c7ae0) 1;
+    
+}
+
+.messageForm.flip{
+    transform: rotateY(0deg);
+  }
+
+
+.message form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 90%;
+    z-index: 100;
+}
+.message form input, textarea{
+    width: 85%;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+
+    border: none;
+    border-radius: 5px;
+    padding: 5px 5px;
+    z-index: 201;
+    outline: none;
+    background: unset;
+    border: 1.5px double;
+    border-image: linear-gradient(225deg, #0000, #6c7ae0) 1;
+}
+input{
+    height: 12%;
+}
+#submit{
+    width: 30%;
+    align-self: center;
+    cursor: pointer;
+    margin-right: 2%;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+#submit:hover{
+    cursor: pointer;
+    border-image: linear-gradient(45deg, #0000, #6c7ae0) 1
+}
+.r{
+    height: 50%;
+    width: 30%;
+    margin-left:5%;
+    color: #fff;
+}
+.contactMe{
+    height: 50%;
+    width: 100%;
+}
+.social{
+    height: 50%;
+    width: 100%;
+}
+
+
+
+.contactMe h2{
+    font-family: 'halium', sans-serif;
+
+    width: 98%;
+    height: 50%;
+    font-size: 2rem;
+    /* border: thick double white; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 17px;
+}
+h2 .square{
+    height: 20px;
+    width: 20px;
+    position: relative;
+}
+.sqL{
+    border:1px double ;
+    border-image:  linear-gradient(to right, transparent ,#6c7ae0) 1;
+}
+.sqR{
+    border:1px double ;
+    border-image:  linear-gradient(to left, transparent ,#6c7ae0) 1;
+}
+
+.iconS{
+    width: 2rem;
+    height: 2rem;
+    /* background-color: #fff; */
+   
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+.social{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+@media (max-width:1000){ 
+    .pg4{
+        flex-direction: column;
+        padding: 2% 0;
+    }
+    .message{
+     width: 80%;
+    }
+    .r{
+        margin-left: 0;
+        margin-top: 2%;
+        height: 30%;
+        width: 60%;
+    }
+    .contactMe h2{
+        height: 40%;
+        font-size: 80%;
+        margin: 7% 0;
+        
+    }
+    .num{
+        display: none;
+    }
+    .mailID{
+        display: none;
+    }
+    #sqL1{
+        left: -4% !important;
+    }
+    #sqR2{
+        left: 60% !important;
+    }
+    #sqL2{
+        left: -45% !important;
+    }
+    #sqR2{
+        left: -15% !important;
+    }
+}
+
+
+
+
+
+/* SCROLL BAR */
+
+.custom-scrollbar {
+    overflow-y: auto; /* Enable vertical scrollbar */
+    max-height: 100vh; /* Set maximum height for scrollbar container */
+  }
+  
+  /* Customize scrollbar track */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 10px; /* Set the width of the scrollbar */
+  }
+  
+  /* Customize scrollbar thumb */
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--betiColor); /* Set the color of the scrollbar thumb */
+    border-radius: 0px; /* Set the radius of the scrollbar thumb */
+    opacity: 0.5;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: var(--papaColor); /* Set the color of the scrollbar thumb on hover */
+  }
+  
+  /* Customize scrollbar track */
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background-color: var(--betiColor); /* Set the color of the scrollbar track */
+    /* Set the radius of the scrollbar track */
+  }
+  
+
